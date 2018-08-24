@@ -6,7 +6,14 @@ shinyServer(function(input, output){
   observe({
     selected$geography <- input$geo_choice
     selected$group <- input$group
-    selected$estimate <- input$checkGroup
+    selected$checkGroup <- input$checkGroup
+    selected$topic <- input$topic_choice
+    selected$est <- input$est
   })
-  output$info <- renderText(({paste("Pulling data from AAPI Data Server", selected$geography, selected$group, selected$estimate)}))
+  output$info <- renderText(({paste("Pulling data from AAPI Data Server", 
+                                    selected$geography, 
+                                    selected$group, 
+                                    selected$checkGroup,
+                                    selected$topic_choice,
+                                    selected$est)}))
 })
